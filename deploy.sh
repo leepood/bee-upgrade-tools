@@ -79,11 +79,11 @@ function installBeeClef() {
 
 function installBee() {
     beeVer=$(getPackageVersion bee)
-    if version_lt $beeVer "0.6.1"; then
-        echo "Install Bee 0.6.1"
+    if version_lt $beeVer "0.6.2"; then
+        echo "Install Bee 0.6.2"
         cd /tmp
-        wget -O bee_0.6.1_amd64.deb --quiet https://github.com/ethersphere/bee/releases/download/v0.6.1/bee_0.6.1_amd64.deb
-        apt install -o Dpkg::Options::="--force-confold" ./bee_0.6.1_amd64.deb
+        wget -O bee_0.6.2_amd64.deb --quiet https://github.com/ethersphere/bee/releases/download/v0.6.2/bee_0.6.2_amd64.deb
+        apt install -o Dpkg::Options::="--force-confold" ./bee_0.6.2_amd64.deb
         # assume we have installed bee successfully, we need upgrade configuration
         cat <<EOF >/etc/default/bee
 BEE_SWAP_ENDPOINT=$BEE_SWAP_ENDPOINT
